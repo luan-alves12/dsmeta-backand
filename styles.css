@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+/* esse importe foi dado pelo recurso do google chamado google fontes*/
+
+* {
+    font-family:'robot',sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Esse * significa aplicar para todos , no caso tem um font-family , então ele ta aplicando 
+em todas as fontes escritas 
+Esse margin e padding 0 , foi para retirar os espaçamentos das fontes , se apagar o margin e 
+padding vai entender melhor , como fica o titulo dsmeta
+*/
+
+a , a:hover, a:visited{
+    
+    color: unset;
+    text-decoration: none;
+
+}
+/*a aplicação de css acima e referente a cor do meu link ahref */
+
+.dsmeta-logo-conteiner{
+
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+
+}
+/*aqui esta a ordem de exibição que a direção do meu flex e em coluna ou seja um abaixo do outro
+o alinhamento dos itens centralizado , e o display flex que alinha em centro tbm , cada item
+em especifico no caso*/
+
+header{
+
+    background: linear-gradient(180deg, #102347 0%, #181818 100%);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+/*o display flex foi para destopar a img do topo do site , já o justifify content foi para
+alinhar tudo , obs : o align-itens esta fazendo o mesmo do display :flex*/
+
+/*ja esse css do dsmeta logo , ficou responsável pelo display , e o alinhamento*/
+
+.dsmeta-logo-conteiner img{
+
+    width: 235px;
+
+}
+/*aqui esse css aplica diretamente ao link da imagem , ou seja todas as imagens contidas na div*/
+
+.dsmeta-logo-conteiner h1{
+
+    margin-top: 15px;
+    font-size: 24px;
+
+}
+/*referente a margin do h1 , o espaçamento do titulo em h1 para a minah foto , e sua fonte 24px*/
+
+.dsmeta-logo-conteiner p{
+
+    font-size: 14px;
+    font-weight: 300;
+}
+/*aqui e o tamnho e peso da fonte dos meus paragrafos que e o p*/
+
+body , html {
+
+    background-color: #000;
+    color: #fff;
+
+}
+/*aqui e a cor do titulo e o background da pagina*/
+
+/*--------------------------- CSS do conteúdo principal -----------------------------------*/
+
+.dsmeta-card{
+
+    background-color: #283142;
+    border-radius: 10px;
+    padding: 30px 10px;
+
+}
+/*aqui com o radius eu deixou as bordas arredondadas , e o padding e para dar distancia entre
+as letras*/
+
+.dsmeta-sales-title {
+
+    color: #676FFF;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+/*o margin-bottom e para da distanciamento dos itens na parte inferior diferente do top*/
+
+.dsmeta-conteiner {
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+/*aqui esse e o css responsável pelo conteudo principal*/
+
+#sales{
+
+    padding: 40px 10px;
+
+}
+/*aqui vai ocorrer o espaçamento nas laterais e na altura , o primeiro 40px e altura
+já o 10px e na largura*/
+
+.dsmeta-form-control{
+
+    width: 100%;
+    height: 46px;
+    background-color: #1B2531;
+    border: 1px solid #384459;
+    border-radius: 5px;
+    color: #9AAABE;
+    padding: 0px 20px;
+    font-size: 18px;
+
+}
+/*aqui estou tratando o css do input do meu form*/
+
+.dsmeta-form-control1-container{
+
+    margin-bottom: 16px;
+    max-width: 300px;
+
+}
+/*max-width limita o espaço do input , sem ele , acabaria o input saindo do espaço*/
+
+.dsmeta-sales-table{
+
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    
+}
+/*aqui nesta etapa e usado o spacing 0 , border collapse para poder notar a 
+diferença na aplicação das bordas */
+
+.dsmeta-sales-table thead{
+
+    height: 55px;
+    font-size: 16px;
+    color: #E9E9E9;
+    font-weight: 700;
+
+}
+/*aqui ficou definido o cabeçalho da tabela */
+
+.dsmeta-sales-table tbody{
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #CFCFCF;
+    text-align: center;
+
+}
+/*aqui o corpo da tabela*/
+
+.dsmeta-sales-table tbody tr{
+
+    height: 74px;
+    border-top: 1px solid #5F6E82;
+
+}
+
+.dsmeta-sales-table tbody tr:nth-child(odd){
+
+    background-color: #242C3B;
+
+}
+/*essa classe esta com tr:nth-child(odd) pois estou referenciando o filho de 
+tbody tr e odd significa impar ou seja sempre que for impar ele aplica , aquela
+cor diferente */
+
+.dsmeta-sales-table tbody tr:hover > td{
+
+    background-color: #5f6e82;
+
+}
+/* essa classe existe para da um efeito de cor diferente ao passar o mouse sobre
+um determinado elemento*/
+
+.dsmeta-red-btn{
+
+    height: 45px;
+    width: 45px;
+    background: rgba(255, 107, 114, 0.1);
+    border: 1px solid #FF6B72;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+/* essa classe e referente ao quadrado que guarda a imagem das td */
+
+.dsmeta-red-btn img{
+
+    width: 19px;
+
+}
+/*classe apenas para definir o tamanho da imagem*/
+
+.dsmeta-red-btn-container{
+
+    display: flex;
+    justify-content: center;
+
+}
+/*esse display e o justify e para ajudar o quadrado vermelho ficar alinha no meio*/
+
+.show576{
+
+    display: none;
+
+}
+/*essa classe e apenas para fazer sumir o item data*/
+
+@media (min-width :576px){
+    .show576{
+        display: table-cell;
+    }
+    .dsmeta-card{
+        padding: 35px;
+    }
+    .dsmeta-sales-table tbody tr{
+        height: 55px;
+    }
+    .dsmeta-sales-table tbody{
+        font-size: 18px;
+    }
+}
+/*esse media e um recurso do css que permite toda vez que a tela tiver uma medida
+de 576px ele habilite o display da classe , que desativou acima*/
+
+.show992{
+    display: none;
+}
+
+@media (min-width : 992px){
+    .show992{
+        display: table-cell;
+    }
+}
+/*a mesma ideia da anterior , acima*/
