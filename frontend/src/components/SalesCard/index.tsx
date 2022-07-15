@@ -1,4 +1,5 @@
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import NotificationButton from '../NotificationButton'
@@ -16,6 +17,21 @@ function SalesCard() {
     /*Essas declarações acima , são declarações de dados(variaveis) composto
      porque ele tem o dado e a função que modifica o mesmo , e depois o useSate 
      que já começa com a data de hoje*/ 
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/sales").then(response => {
+            console.log(response.data);
+        })
+        /*aqui ocorre a requisição , nessa caso a requisição retorna um obj em js
+        promesi , e o obj que vai executar uma operação , ela pode falhar ou 
+        da certo , para capturar o que da certo usamos o .then() pois ela vai 
+        receber o obj que deu certo.*/
+    },[]);
+
+    /*useefect e uma react , ele serve para executar quando o componente e montado
+    a primeira vez , e também quando algum valor for alterado.
+    o primeiro () e uma função {} e um argumento*/
+
     return (
 
         <div className="dsmeta-card">
