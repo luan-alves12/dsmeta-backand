@@ -2,6 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
+import { Sale } from "../../models/sale"
+import { BASE_URL } from "../../utils/request"
 import NotificationButton from '../NotificationButton'
 import './styles.css'
 
@@ -11,22 +13,27 @@ function SalesCard() {
     const date = new Date(new Date().setDate(new Date().getDate() - 365))
     /*método para alterar a data para a do ano passado , chamada de métodos */
 
-    const [minDate , setMinDate] = useState(new Date())
-    const [maxDate , setMaxDate] = useState(new Date())
+    const [minDate, setMinDate] = useState(new Date())
+    const [maxDate, setMaxDate] = useState(new Date())
+
+    const [sales, setSales] = useState<Sale[]>([]);
 
     /*Essas declarações acima , são declarações de dados(variaveis) composto
      porque ele tem o dado e a função que modifica o mesmo , e depois o useSate 
-     que já começa com a data de hoje*/ 
+     que já começa com a data de hoje*/
 
     useEffect(() => {
-        axios.get("http://localhost:8080/sales").then(response => {
-            console.log(response.data);
-        })
+        axios.get(`${BASE_URL}/sales`).then(response => {
+            setSales(response.data.content);
+        });
         /*aqui ocorre a requisição , nessa caso a requisição retorna um obj em js
         promesi , e o obj que vai executar uma operação , ela pode falhar ou 
         da certo , para capturar o que da certo usamos o .then() pois ela vai 
-        receber o obj que deu certo.*/
-    },[]);
+        receber o obj que deu certo.
+        ESSE BASE_URL esta configurado dentro do meu arquivo request.ts que eu
+        criei para ficar com as informações do servidor ou seja meu BASE e o 
+        servidor + porta*/
+    }, []);
 
     /*useefect e uma react , ele serve para executar quando o componente e montado
     a primeira vez , e também quando algum valor for alterado.
@@ -46,11 +53,11 @@ function SalesCard() {
                         onChange={(date: Date) => setMinDate(date)}
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
-                        //esse DatePicker ele e responsável por alterar meu antigo
-                        //input colocando o date no formato select , mas o evento 
-                        //onchange
+                    //esse DatePicker ele e responsável por alterar meu antigo
+                    //input colocando o date no formato select , mas o evento 
+                    //onchange
                     />
-                    
+
                 </div>
 
                 <div className="dsmeta-form-control1-container">
@@ -78,45 +85,26 @@ function SalesCard() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="show992">#341</td>
-                            <td className="show576">11/07/2022</td>
-                            <td>Anakin</td>
-                            <td className="show992">15</td>
-                            <td className="show992">11</td>
-                            <td>R$ 55300.00</td>
-                            <td>
-                                <div className="dsmeta-red-btn-container">
-                                    <NotificationButton />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="show992">#341</td>
-                            <td className="show576">11/07/2022</td>
-                            <td>Anakin</td>
-                            <td className="show992">15</td>
-                            <td className="show992">11</td>
-                            <td>R$ 55300.00</td>
-                            <td>
-                                <div className="dsmeta-red-btn-container">
-                                    <NotificationButton />
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="show992">#341</td>
-                            <td className="show576">11/07/2022</td>
-                            <td>Anakin</td>
-                            <td className="show992">15</td>
-                            <td className="show992">11</td>
-                            <td>R$ 55300.00</td>
-                            <td>
-                                <div className="dsmeta-red-btn-container">
-                                    <NotificationButton />
-                                </div>
-                            </td>
-                        </tr>
+                        {sales.map(sale => {
+
+                            return (
+                            <tr key={sale.id}>
+                                <td className="show992">{sale.id}</td>
+                                <td className="show576">{new Date(sale.date).toLocaleDateString()}</td>
+                                <td>{sale.sellerName}</td>
+                                <td className="show992">{sale.visited}</td>
+                                <td className="show992">{sale.deals}</td>
+                                <td>R$ {sale.amount.toFixed(2)}</td>
+                                <td>
+                                    <div className="dsmeta-red-btn-container">
+                                        <NotificationButton />
+                                    </div>
+                                </td>
+                            </tr>)
+
+                        })
+                        }
+
                     </tbody>
                 </table>
             </div>
