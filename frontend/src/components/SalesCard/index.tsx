@@ -23,7 +23,16 @@ function SalesCard() {
      que já começa com a data de hoje*/
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/sales`).then(response => {
+
+        const dmin = minDate.toISOString().slice(0,10);
+
+        const dmax = maxDate.toISOString().slice(0,10);
+
+        /*Essas var em cima são criadas para pegar a data e com o slice acaba
+        ocorrendo o fateamento da string , abaixo esta a concatenação para no front
+        ele filtrar as datas */
+
+        axios.get(`${BASE_URL}/sales?minDate=${dmin}&maxDate=${dmax}`).then(response => {
             setSales(response.data.content);
         });
         /*aqui ocorre a requisição , nessa caso a requisição retorna um obj em js
@@ -33,7 +42,7 @@ function SalesCard() {
         ESSE BASE_URL esta configurado dentro do meu arquivo request.ts que eu
         criei para ficar com as informações do servidor ou seja meu BASE e o 
         servidor + porta*/
-    }, []);
+    }, [minDate , maxDate]);  /* esse [minDate,maxDate] e para a app filtrar sempre que o valor mudar */
 
     /*useefect e uma react , ele serve para executar quando o componente e montado
     a primeira vez , e também quando algum valor for alterado.
