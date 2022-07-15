@@ -1,0 +1,153 @@
+.dsmeta-card {
+
+    background-color: #283142;
+    border-radius: 10px;
+    padding: 30px 10px;
+
+}
+
+/*aqui com o radius eu deixou as bordas arredondadas , e o padding e para dar distancia entre
+as letras*/
+
+.dsmeta-sales-title {
+
+    color: #676FFF;
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+
+
+.dsmeta-form-control {
+
+    width: 100%;
+    height: 46px;
+    background-color: #1B2531;
+    border: 1px solid #384459;
+    border-radius: 5px;
+    color: #9AAABE;
+    padding: 0px 20px;
+    font-size: 18px;
+
+}
+
+/*aqui estou tratando o css do input do meu form*/
+
+.dsmeta-form-control1-container {
+
+    margin-bottom: 16px;
+    max-width: 300px;
+
+}
+
+/*max-width limita o espaço do input , sem ele , acabaria o input saindo do espaço*/
+
+.dsmeta-sales-table {
+
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+}
+
+/*aqui nesta etapa e usado o spacing 0 , border collapse para poder notar a 
+diferença na aplicação das bordas */
+
+.dsmeta-sales-table thead {
+
+    height: 55px;
+    font-size: 16px;
+    color: #E9E9E9;
+    font-weight: 700;
+
+}
+
+/*aqui ficou definido o cabeçalho da tabela */
+
+.dsmeta-sales-table tbody {
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #CFCFCF;
+    text-align: center;
+
+}
+
+/*aqui o corpo da tabela*/
+
+.dsmeta-sales-table tbody tr {
+
+    height: 74px;
+    border-top: 1px solid #5F6E82;
+
+}
+
+.dsmeta-sales-table tbody tr:nth-child(odd) {
+
+    background-color: #242C3B;
+
+}
+
+/*essa classe esta com tr:nth-child(odd) pois estou referenciando o filho de 
+tbody tr e odd significa impar ou seja sempre que for impar ele aplica , aquela
+cor diferente */
+
+.dsmeta-sales-table tbody tr:hover>td {
+
+    background-color: #5f6e82;
+
+}
+
+/* essa classe existe para da um efeito de cor diferente ao passar o mouse sobre
+um determinado elemento*/
+
+
+.dsmeta-red-btn-container {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+/*esse display e o justify e para ajudar o quadrado vermelho ficar alinha no meio*/
+
+.show576 {
+
+    display: none;
+
+}
+
+/*essa classe e apenas para fazer sumir o item data*/
+
+@media (min-width :576px) {
+    .show576 {
+        display: table-cell;
+    }
+
+    .dsmeta-card {
+        padding: 35px;
+    }
+
+    .dsmeta-sales-table tbody tr {
+        height: 55px;
+    }
+
+    .dsmeta-sales-table tbody {
+        font-size: 18px;
+    }
+}
+
+/*esse media e um recurso do css que permite toda vez que a tela tiver uma medida
+de 576px ele habilite o display da classe , que desativou acima*/
+
+.show992 {
+    display: none;
+}
+
+@media (min-width : 992px) {
+    .show992 {
+        display: table-cell;
+    }
+}
+
+/*a mesma ideia da anterior , acima*/

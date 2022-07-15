@@ -1,13 +1,35 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html {
+    background-color: #000;
+    color: #fff;
 }
+
+a, a:hover, a:visited {
+    color: unset;
+    text-decoration: none;
+}
+.dsmeta-conteiner {
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+
+/*aqui esse e o css responsável pelo conteudo principal*/
+
+#sales{
+
+    padding: 40px 10px;
+
+}
+/*aqui vai ocorrer o espaçamento nas laterais e na altura , o primeiro 40px e altura
+já o 10px e na largura*/

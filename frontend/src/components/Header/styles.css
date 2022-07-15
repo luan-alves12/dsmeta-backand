@@ -1,0 +1,46 @@
+.dsmeta-logo-conteiner{
+
+    display: flex;
+    flex-direction: column;
+    align-items : center;
+
+}
+/*aqui esta a ordem de exibição que a direção do meu flex e em coluna ou seja um abaixo do outro
+o alinhamento dos itens centralizado , e o display flex que alinha em centro tbm , cada item
+em especifico no caso*/
+
+header{
+
+    background: linear-gradient(180deg, #102347 0%, #181818 100%);
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+/*o display flex foi para destopar a img do topo do site , já o justifify content foi para
+alinhar tudo , obs : o align-itens esta fazendo o mesmo do display :flex*/
+
+/*ja esse css do dsmeta logo , ficou responsável pelo display , e o alinhamento*/
+
+.dsmeta-logo-conteiner img{
+
+    width: 235px;
+
+}
+/*aqui esse css aplica diretamente ao link da imagem , ou seja todas as imagens contidas na div*/
+
+.dsmeta-logo-conteiner h1{
+
+    margin-top: 15px;
+    font-size: 24px;
+
+}
+/*referente a margin do h1 , o espaçamento do titulo em h1 para a minah foto , e sua fonte 24px*/
+
+.dsmeta-logo-conteiner p{
+
+    font-size: 14px;
+    font-weight: 300;
+}
+/*aqui e o tamnho e peso da fonte dos meus paragrafos que e o p*/
